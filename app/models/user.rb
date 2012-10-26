@@ -7,7 +7,18 @@ class User < ActiveRecord::Base
   has_many :bumps
   has_many :teams
   has_many :internal_posts, :through => :teams
-  has_many :followers, :foreign_key => :follower_id
-  has_many :follows, :through => :followings, :foreign_key => :following_id
+
+  # the follows class itself
+  has_many :follows, :foreign_key => :follower_id 
+  # then we build the relationship through that
+  has_many :following, :through => :follows
+
+  # need to get follows, but the other way
+  has_many :followed_by, :class_name => 'Follow', :foreign_key => :follower_id
+  # then get the followers through that relationship
+  has_many :followers, :through => :followed_by
   
+  # we don't plan on ever using follows or followed_by, but they are simply there to build the other relationships that we do want.
+
+
 end
