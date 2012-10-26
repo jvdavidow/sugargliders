@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  glucose_reading: 
+  exercise_level: 1
+  carbs_consumed: 1
+  unit_output: 1
+
+two:
+  glucose_reading: 
+  exercise_level: 1
+  carbs_consumed: 1
+  unit_output: 1
