@@ -1,7 +1,12 @@
 class Bump < ActiveRecord::Base
-  attr_accessible :bumped_id, :bumper_id, :post_id
+  attr_accessible :vote, :user_id
   
   belongs_to :user
-  belongs_to :post
+  has_many :voters
   
-end
+  acts_as_voteable
+  
+  voter.vote(voteable, vote)
+  vote.unvote_for(voteable)
+  
+end 

@@ -3,9 +3,8 @@ class User < ActiveRecord::Base
   
   has_many :readings
   has_many :posts
-  has_many :follows
   has_many :bumps
-  has_many :teams
+  has_many :teams, :through => :memberships
   has_many :internal_posts, :through => :teams
 
   # the follows class itself
@@ -20,5 +19,7 @@ class User < ActiveRecord::Base
   
   # we don't plan on ever using follows or followed_by, but they are simply there to build the other relationships that we do want.
 
+  acts_as_voter
+  has_karma(:questions, :as => :submitter, :weight => 0.5)
 
 end

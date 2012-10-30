@@ -3,6 +3,11 @@ class Post < ActiveRecord::Base
   
   belongs_to :user
   has_one :reading
-  has_many :follows
+  has_many :bumps
   
-end
+  acts_as_voteable
+  
+  voter.vote(voteable, vote)
+  vote.unvote_for(voteable)
+  
+end 

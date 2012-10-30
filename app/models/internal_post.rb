@@ -1,7 +1,7 @@
 class InternalPost < ActiveRecord::Base
-  attr_accessible :body, :group_id
+  attr_accessible :body
   
   belongs_to :user
-  has_one :group, :class => :team  
+  belongs_to :team
   
 end
