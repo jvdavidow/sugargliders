@@ -11,12 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121030032934) do
+ActiveRecord::Schema.define(:version => 20121031215201) do
 
   create_table "bumps", :force => true do |t|
     t.integer  "post_id"
     t.integer  "bumper_id"
     t.integer  "bumped_id"
+    t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -31,9 +32,20 @@ ActiveRecord::Schema.define(:version => 20121030032934) do
   create_table "internal_posts", :force => true do |t|
     t.text     "body"
     t.integer  "group_id"
+    t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "memberships", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "team_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "memberships", ["team_id"], :name => "index_memberships_on_team_id"
+  add_index "memberships", ["user_id"], :name => "index_memberships_on_user_id"
 
   create_table "posts", :force => true do |t|
     t.text     "body"
@@ -49,6 +61,7 @@ ActiveRecord::Schema.define(:version => 20121030032934) do
     t.integer  "exercise_level"
     t.integer  "carbs_consumed"
     t.integer  "unit_output"
+    t.integer  "user_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end

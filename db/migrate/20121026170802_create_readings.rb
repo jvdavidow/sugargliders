@@ -6,6 +6,7 @@ class CreateReadings < ActiveRecord::Migration
       t.integer :exercise_level
       t.integer :carbs_consumed
       t.integer :unit_output
+      t.references :user
 
       t.timestamps
     end
