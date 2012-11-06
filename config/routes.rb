@@ -1,5 +1,24 @@
 Sugargliders::Application.routes.draw do
+  get "sessions/create"
+
+  get "sessions/destroy"
+
+  get "home/index"
+
+  get "post/index"
+
+  get "post/new"
+
+  get "post/create"
+
+  get "post/show"
+
+  get "post/edit"
+
   resources :readings
+  
+  match '/signin/:id' => 'readings#new'
+  match '/signup/:id' => 'user#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -50,7 +69,7 @@ Sugargliders::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+root :to => 'sessions#new'
 
   # See how all your routes lay out with "rake routes"
 

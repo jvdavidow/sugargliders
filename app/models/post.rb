@@ -5,9 +5,9 @@ class Post < ActiveRecord::Base
   has_one :reading
   has_many :bumps
   
-  acts_as_voteable
-  
-  voter.vote(voteable, vote)
-  vote.unvote_for(voteable)
+  #acts_as_voteable
+  #
+  #voter.vote(voteable, vote)
+  #vote.unvote_for(voteable)
   
 end 

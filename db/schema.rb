@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121031215201) do
+ActiveRecord::Schema.define(:version => 20121106182217) do
 
   create_table "bumps", :force => true do |t|
     t.integer  "post_id"
@@ -20,6 +20,14 @@ ActiveRecord::Schema.define(:version => 20121031215201) do
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "feeds", :force => true do |t|
+    t.string   "post"
+    t.integer  "following_id"
+    t.integer  "user_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "follows", :force => true do |t|

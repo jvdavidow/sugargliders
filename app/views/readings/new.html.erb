@@ -1,6 +1,7 @@
 <h1>input your stats</h1>
 <p>pop in your most recent stats, then attach some thoughts.</p>
 
+<%# insert form_for here %>
 <%# form_for(@reading) do |f| %>
 		<%# f.label :exercise %>
     <%# f.text_field :exercise_level %>
@@ -13,4 +14,4 @@
  		<%# f.submit %>
 <%# end %>
 
-<%= link_to 'post', posts_path %>
+<%= link_to 'post', reading_path(Reading.first) %>
