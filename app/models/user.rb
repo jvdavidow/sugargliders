@@ -2,7 +2,6 @@ class User < ActiveRecord::Base
   attr_accessible :age, :email, :name, :password, :username
   
   has_many :readings
-  has_many :posts
   has_many :bumps
   has_many :memberships
   has_many :teams, :through => :memberships
