@@ -5,16 +5,16 @@ Sugargliders::Application.routes.draw do
 
   get "home/index"
 
-  get "post/index"
+  get "reading/index"
 
-  get "post/new"
-
-  get "post/create"
-
-  get "post/show"
-
-  get "post/edit"
-
+  get "reading/new"
+           
+  get "reading/create"
+           
+  get "reading/show"
+           
+  get "reading/edit"
+           
   resources :readings
   
   match '/signin/:id' => 'readings#new'
