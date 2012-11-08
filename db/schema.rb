@@ -55,20 +55,13 @@ ActiveRecord::Schema.define(:version => 20121106182217) do
   add_index "memberships", ["team_id"], :name => "index_memberships_on_team_id"
   add_index "memberships", ["user_id"], :name => "index_memberships_on_user_id"
 
-  create_table "posts", :force => true do |t|
-    t.text     "body"
-    t.integer  "reading_id"
-    t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "readings", :force => true do |t|
     t.integer  "stress_level"
     t.integer  "glucose_reading"
     t.integer  "exercise_level"
     t.integer  "carbs_consumed"
     t.integer  "unit_output"
+    t.string   "post"
     t.integer  "user_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
