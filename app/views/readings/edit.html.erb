@@ -1,23 +1,2 @@
 <h1>Readings#edit</h1>
 <p>Find me in app/views/readings/edit.html.erb</p>
-
-do you want to attach any of your stats to your post?
-<%= check_box_tag :exercise_level %>
-<%= label_tag(:exercise_level, "my workout load's been " + @exercise_level) %></br>
-<%= check_box_tag :carbs_consumed %>
-<%= label_tag(:carbs_consumed, "i've consumed " + @carbs_consumed) %></br>
-<%= check_box_tag :stress_level %>
-<%= label_tag(:stress_level, "i've been at " + @stress_level + " on a scale of 1 to 5 today") %></br>
-<%= check_box_tag :glucose_reading %>
-<%= label_tag(:glucose_reading, "i have a BG of " + @glucose_reading) %></br></br>
-
-
-here's a preview, you like it?  hit post!
-<%# can we render a preview?  something like render @show ?? %>
-<%= submit_tag :reading %>
-
-<% if @reading.save ? true  %>
-	<%= redirect_to 'feed' %>
-<% else %>
-	<%= render 'new', "sorry, something went wrong!" %>
-<% end %>

@@ -8,6 +8,10 @@ class CreateReadings < ActiveRecord::Migration
       t.integer :unit_output
       t.string  :post
       t.references :user
+      t.boolean :stress_level_public
+      t.boolean :glucose_reading_public
+      t.boolean :exercise_level_public
+      t.boolean :carbs_consumed_public
 
       t.timestamps
     end

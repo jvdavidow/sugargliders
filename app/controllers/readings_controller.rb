@@ -3,13 +3,16 @@ class ReadingsController < ApplicationController
     @readings = Reading.all
   end
 
+  def review
+    @reading = Reading.new(params[:reading])
+  end
+
   def show
     @reading = Reading.find(params[:id])
   end
 
   def new
     @reading = Reading.new
-    redirect_to :review => :edit
   end
 
   def edit
@@ -23,6 +26,11 @@ class ReadingsController < ApplicationController
   
   def create
     @reading = Reading.new(params[:reading])
+    if @reading.save
+      redirect_to readings_path
+    else
+      render :new
+    end
   end
   
   def destroy

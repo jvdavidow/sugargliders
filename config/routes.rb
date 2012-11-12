@@ -7,7 +7,11 @@ Sugargliders::Application.routes.draw do
   get "home/index"
 
   
-  resources :readings
+  resources :readings do
+    collection do
+      post 'review'
+    end
+  end
   
   match '/signin/:id' => 'readings#index'
   match '/signup/:id' => 'user#new'

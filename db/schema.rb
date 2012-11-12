@@ -63,8 +63,12 @@ ActiveRecord::Schema.define(:version => 20121108225535) do
     t.integer  "unit_output"
     t.string   "post"
     t.integer  "user_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.boolean  "stress_level_public"
+    t.boolean  "glucose_reading_public"
+    t.boolean  "exercise_level_public"
+    t.boolean  "carbs_consumed_public"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
   end
 
   create_table "teams", :force => true do |t|

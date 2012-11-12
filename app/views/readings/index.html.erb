@@ -1,9 +1,13 @@
 <h1>jump in!</h1>
-<p>here's how other people are doin'</p>
+<h2>here's how other people are doin'</h2>
 
-<%= render @readings %>
+<div class = "feed" id = "public">
+<% @readings.each do |reading| %>
+<%= reading.post %></br>
+<% end %>
+</div>
 
-<h1>create your reading,</h1>
-<h2>and add some thoughts</h2>
-<%= link_to 'new', @new %>
+<h2>create your reading,</h2>
+<h3>and add some thoughts</h3>
+<%= link_to 'create new', new_reading_path %>
 
