@@ -2,23 +2,7 @@
 <p>pop in your most recent stats, then attach some thoughts.</p>
 
 <%# insert form_for here %>
-<%= form_for(@reading) do |f| %>
-<%= f.text_field :exercise, "" %>
-<%# form_for(@reading) do |f| %>
-		<%# f.label :exercise %>
-    <%# f.text_field :exercise_level %>
- 		<%# f.label :carbs %>
-    <%# f.text_field :carbs %>
-		<%# f.label :stress %>
-    <%# f.text_field :stress %>
- 	 	<%# f.label :bloodsugar %>
-    <%# f.text_field :bloodsugar %>
- 		<%# f.submit "get units"%>
-<%# end %>
+<%= render 'form' %>
 
 <%# insert unit output here %>
 
-<h2>how's this make you feel?</h2>
-<%= form_for(@post) do |f| %>
-<%= f.text_field :post %>
-<%= end %>

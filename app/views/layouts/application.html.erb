@@ -10,10 +10,10 @@
 	<header></header>
 	<nav>
 		<ul>
-			<li><%= link_to "wall", @index %></li>
-			<li><%= link_to "posts", @readings %></li>
-			<li><%= link_to "teams", @teams %></li>
-			<li><%= link_to "profile", @profile %></li>
+			<li><%= link_to "wall", readings_path(@index) %></li>
+			<li><%= link_to "posts", readings_path(@readings) %></li>
+			<li><%= link_to "teams", readings_path(@teams) %></li>
+			<li><%= link_to "profile", readings_path(@profile) %></li>
 		</ul>
 	</nav>
 	<section></section>

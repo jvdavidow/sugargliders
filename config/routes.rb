@@ -1,24 +1,19 @@
 Sugargliders::Application.routes.draw do
+
   get "sessions/create"
-
-  get "sessions/destroy"
-
+  get "sessions/new"
+  get "sessions/create"
+  
   get "home/index"
 
-  get "reading/index"
-
-  get "reading/new"
-           
-  get "reading/create"
-           
-  get "reading/show"
-           
-  get "reading/edit"
-           
+  
   resources :readings
   
-  match '/signin/:id' => 'readings#new'
+  match '/signin/:id' => 'readings#index'
   match '/signup/:id' => 'user#new'
+  match '/readings/:id/new' => 'readings#new'
+  match '/readings/:id/edit' => 'readings#edit'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

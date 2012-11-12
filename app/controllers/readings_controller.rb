@@ -9,10 +9,16 @@ class ReadingsController < ApplicationController
 
   def new
     @reading = Reading.new
+    redirect_to :review => :edit
   end
 
   def edit
     @reading = Reading.find(params[:id])
+    # if @reading.save ?
+    #  redirect_to @feed
+    # else
+    #  render @new
+    # end
   end
   
   def create
