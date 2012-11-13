@@ -7,6 +7,9 @@
 <% end %>
 </div>
 
+
+<%= link_to 'show following', readings_path(q: "following") unless params[:q] %>
+
 <h2>create your reading,</h2>
 <h3>and add some thoughts</h3>
 <%= link_to 'create new', new_reading_path %>

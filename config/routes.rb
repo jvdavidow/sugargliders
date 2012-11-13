@@ -1,8 +1,7 @@
 Sugargliders::Application.routes.draw do
 
-  get "sessions/create"
-  get "sessions/new"
-  get "sessions/create"
+  devise_for :users
+
   
   get "home/index"
 

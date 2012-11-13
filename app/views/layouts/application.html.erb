@@ -8,6 +8,21 @@
 </head>
 <body>
 	<header></header>
+	
+	<p class="notice"><%= notice %></p>
+	<p class="alert"><%= alert %></p>
+	
+	<div id="user_nav">
+		<% if user_signed_in? %>
+			Logged in as <strong><%= current_user.username %></strong>
+			<%= link_to "edit profile", edit_user_registration_path %>
+			<%= link_to "hit the road", destroy_user_session_path, 					method: :delete %>
+		<% else %>
+			<%= link_to "join in", new_user_registration_path %>
+			<%= link_to "login", new_user_session_path %>
+		<% end %>
+	</div>
+	
 	<nav>
 		<ul>
 			<li><%= link_to "wall", readings_path(@index) %></li>
@@ -16,6 +31,7 @@
 			<li><%= link_to "profile", readings_path(@profile) %></li>
 		</ul>
 	</nav>
+	
 	<section></section>
 	<section></section>
 	<section></section>

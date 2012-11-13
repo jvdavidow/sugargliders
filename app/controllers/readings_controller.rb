@@ -1,6 +1,10 @@
 class ReadingsController < ApplicationController
   def index
-    @readings = Reading.all
+    if params[:q]
+      @readings = [Reading.first]
+    else
+      @readings = Reading.all
+    end
   end
 
   def review
