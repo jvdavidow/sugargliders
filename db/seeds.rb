@@ -1,7 +1,10 @@
 10.times do 
   u = User.create(
     name: Faker::Name.name, 
-    username: Faker::Internet.user_name
+    email: Faker::Internet.email,
+    username: Faker::Internet.user_name,
+    password: '12345',
+    password_confirmation: '12345'
   )
   10.times do
     r = u.readings.create(

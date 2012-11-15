@@ -3,22 +3,10 @@
 
 <h2>Sign in</h2>
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
-
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-  <% end -%>
-
-  <div><%= f.submit "Sign in" %></div>
-<% end %>
+<%= render :partial => 'sign_in' %>
 
 <h3>not signed up as a user?  want to join in?</h3>
-<%= link_to "join the club", new_user_registrations_path %>
+<%= link_to "join the club", new_user_registration_path %>
 
 <%= render "devise/shared/links" %>
 
