@@ -1,16 +1,19 @@
 <h1>jump in!</h1>
+<h3>hi, <%= @user.name.humanize %>, how's it hangin'?</h3><br />
+<h4>want to add more to your <%= link_to 'profile', edit_user_registration_path %>?</h4>
+
 <h2>here's how other people are doin'</h2>
 
-<div class = "feed" id = "public">
+<h4>following along? <%= link_to 'show following', readings_path(q: "following") unless params[:q] %></h4>
+
+<div class="feed" id="public">
 <% @readings.each do |reading| %>
-<%= reading.post %></br>
+<%= link_to reading.post, reading %></br>
 <% end %>
 </div>
 
-
-<%= link_to 'show following', readings_path(q: "following") unless params[:q] %>
-
+<div class="box" id="input_reading">
 <h2>create your reading,</h2>
 <h3>and add some thoughts</h3>
 <%= link_to 'create new', new_reading_path %>
-
+</div>

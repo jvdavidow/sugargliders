@@ -11,3 +11,328 @@
  *= require_self
  *= require_tree .
  */
+
+ article,
+ aside,
+ details,
+ figcaption,
+ figure,
+ footer,
+ header,
+ hgroup,
+ nav,
+ section {
+   display: block;
+ }
+
+ audio,
+ canvas,
+ video {
+   display: inline-block;
+   *display: inline;
+   *zoom: 1;
+ }
+
+ audio:not([controls]) {
+   display: none;
+ }
+
+ html {
+   font-size: 100%;
+   -webkit-text-size-adjust: 100%;
+       -ms-text-size-adjust: 100%;
+ }
+
+ a:focus {
+   outline: thin dotted #333;
+   outline: 5px auto -webkit-focus-ring-color;
+   outline-offset: -2px;
+ }
+
+ a:hover,
+ a:active {
+   outline: 0;
+ }
+
+ img {
+   width: auto\9;
+   height: auto;
+   max-width: 100%;
+   vertical-align: middle;
+   border: 0;
+   -ms-interpolation-mode: bicubic;
+ }
+ 
+ body {
+   margin: 0;
+   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-size: 14px;
+   line-height: 20px;
+   color: #333333;
+   background-color: #ffffff;
+ }
+
+ a {
+   color: #0088cc;
+   text-decoration: none;
+ }
+
+ a:hover {
+   color: #005580;
+   text-decoration: underline;
+ }
+
+ .img-rounded {
+   -webkit-border-radius: 6px;
+      -moz-border-radius: 6px;
+           border-radius: 6px;
+ }
+ 
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6 {
+   margin: 10px 0;
+   font-family: inherit;
+   font-weight: bold;
+   line-height: 1;
+   color: inherit;
+   text-rendering: optimizelegibility;
+ }
+ 
+ h1 {
+   font-size: 36px;
+   line-height: 40px;
+ }
+
+ h2 {
+   font-size: 30px;
+   line-height: 40px;
+ }
+
+ h3 {
+   font-size: 24px;
+   line-height: 40px;
+ }
+
+ h4 {
+   font-size: 18px;
+   line-height: 20px;
+ }
+
+ h5 {
+   font-size: 14px;
+   line-height: 20px;
+ }
+
+ h6 {
+   font-size: 12px;
+   line-height: 20px;
+ }
+ 
+ ul,
+ ol {
+   padding: 0;
+   margin: 0 0 10px 25px;
+ }
+ 
+ li {
+   line-height: 20px;
+ }
+ 
+ form {
+   margin: 0 0 20px;
+ }
+ 
+ label,
+ input,
+ button,
+ select,
+ textarea {
+   font-size: 14px;
+   font-weight: normal;
+   line-height: 20px;
+ }
+ 
+ input,
+ button,
+ select,
+ textarea {
+   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+ }
+ 
+ select,
+ textarea,
+ input[type="text"],
+ input[type="password"],
+ input[type="datetime"],
+ input[type="datetime-local"],
+ input[type="date"],
+ input[type="month"],
+ input[type="time"],
+ input[type="week"],
+ input[type="number"],
+ input[type="email"],
+ input[type="url"],
+ input[type="search"],
+ input[type="tel"],
+ input[type="color"],
+ .uneditable-input {
+   display: inline-block;
+   height: 20px;
+   padding: 4px 6px;
+   margin-bottom: 9px;
+   font-size: 14px;
+   line-height: 20px;
+   color: #555555;
+   -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+           border-radius: 3px;
+ }
+ 
+ input[type="radio"],
+ input[type="checkbox"] {
+   margin: 4px 0 0;
+   margin-top: 1px \9;
+   *margin-top: 0;
+   line-height: normal;
+   cursor: pointer;
+ }
+
+ input[type="file"],
+ input[type="image"],
+ input[type="submit"],
+ input[type="reset"],
+ input[type="button"],
+ input[type="radio"],
+ input[type="checkbox"] {
+   width: auto;
+ }
+ 
+ .radio,
+ .checkbox {
+   min-height: 18px;
+   padding-left: 18px;
+ }
+
+ .radio input[type="radio"],
+ .checkbox input[type="checkbox"] {
+   float: left;
+   margin-left: -18px;
+ }
+ 
+ table [class*=span],
+ .row-fluid table [class*=span] {
+   display: table-cell;
+   float: none;
+   margin-left: 0;
+ }
+
+ .table .span1 {
+   float: none;
+   width: 44px;
+   margin-left: 0;
+ }
+
+ .table .span2 {
+   float: none;
+   width: 124px;
+   margin-left: 0;
+ }
+
+ .table .span3 {
+   float: none;
+   width: 204px;
+   margin-left: 0;
+ }
+
+ .table .span4 {
+   float: none;
+   width: 284px;
+   margin-left: 0;
+ }
+
+ .table .span5 {
+   float: none;
+   width: 364px;
+   margin-left: 0;
+ }
+ 
+ .nav {
+   margin-bottom: 20px;
+   margin-left: 0;
+   list-style: none;
+ }
+
+ .nav > li > a {
+   display: block;
+ }
+
+ .nav > li > a:hover {
+   text-decoration: none;
+   background-color: #eeeeee;
+ }
+
+ .nav > .pull-right {
+   float: right;
+ }
+
+ .nav-header {
+   display: block;
+   padding: 3px 15px;
+   font-size: 11px;
+   font-weight: bold;
+   line-height: 20px;
+   color: #999999;
+   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+   text-transform: uppercase;
+ }
+
+ .nav li + .nav-header {
+   margin-top: 9px;
+ }
+
+ .nav-list {
+   padding-right: 15px;
+   padding-left: 15px;
+   margin-bottom: 0;
+ }
+
+ .nav-list > li > a,
+ .nav-list .nav-header {
+   margin-right: -15px;
+   margin-left: -15px;
+   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+ }
+
+ .nav-list > li > a {
+   padding: 3px 15px;
+ }
+
+ .nav-list > .active > a,
+ .nav-list > .active > a:hover {
+   color: #ffffff;
+   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+   background-color: #0088cc;
+ }
+
+ .nav-list [class^="icon-"] {
+   margin-right: 2px;
+ }
+
+ .nav-list .divider {
+   *width: 100%;
+   height: 1px;
+   margin: 9px 1px;
+   *margin: -5px 0 5px;
+   overflow: hidden;
+   background-color: #e5e5e5;
+   border-bottom: 1px solid #ffffff;
+ }
+ 
+ .pagination {
+   height: 40px;
+   margin: 20px 0;
+ }

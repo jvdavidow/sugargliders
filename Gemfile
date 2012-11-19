@@ -40,3 +40,7 @@ gem 'jquery-rails'
 gem 'thumbs_up'
 gem 'faker'
 gem 'devise'
+
+group :development do
+  gem 'quiet_assets'
+end

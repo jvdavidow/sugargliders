@@ -1,4 +1,6 @@
 class ReadingsController < ApplicationController
+  before_filter :authenticate_user!
+  
   def index
     if params[:q]
       @readings = [Reading.first]
