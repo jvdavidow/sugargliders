@@ -7,7 +7,7 @@
 	<%= f.text_field :name %></div>
 
   <div><%= f.label :age %><br />
-	<%= f.integer :age %></div>
+	<%= f.number_field :age %></div>
 
   <div><%= f.label :email %><br />
   <%= f.email_field :email %></div>
@@ -24,7 +24,7 @@
   <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
   <%= f.password_field :current_password %></div>
 
-	<div><%= f.check_box :make_private %> <i>(we recommend you make all your information private, aside from your username)</i></div>
+	<div><%# f.check_box :make_private %> <i>(we recommend you make all your information private, aside from your username)</i></div>
   <div><%= f.submit "Update" %></div>
 <% end %>
 

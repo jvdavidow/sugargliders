@@ -25,10 +25,12 @@
 	
 	<nav>
 		<ul>
-			<li><%= link_to "wall", readings_path(@index) %></li>
-			<li><%= link_to "posts", readings_path(@readings) %></li>
-			<li><%= link_to "teams", readings_path(@teams) %></li>
-			<li><%= link_to "profile", users_path(@profile) %></li>
+			<li><%= link_to "wall", readings_path %></li>
+			<li><%= link_to "posts", readings_path %></li>
+			<li><%= link_to "teams", '#' %></li>
+      <% if user_signed_in? %>
+			<li><%= link_to "profile", current_user %></li>
+      <% end %>
 		</ul>
 	</nav>
 	

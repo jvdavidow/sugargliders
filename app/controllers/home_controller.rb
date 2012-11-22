@@ -6,5 +6,6 @@ class HomeController < ApplicationController
     # else
     #   redirect_to 'new', sessions_path
     # end
+    render layout: false
   end
 end
