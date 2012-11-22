@@ -1,0 +1,28 @@
+<h1>input your stats</h1>
+<p>pop in your most recent stats, then attach some thoughts.</p>
+
+<%= form_for(@reading, :url => review_readings_path) do |f| %>
+	how much exercise have you gotten in today?</br>
+	<%= f.text_field :exercise_level %></br>
+	how many carbs have you consumed?</br>
+	<%= f.text_field :carbs_consumed %></br>
+	how stressed have you been?</br>
+	<% f.text_field :stress_level %></br>
+	what was your most recent sugar reading?</br>
+	<%= f.text_field :glucose_reading %></br>
+	sumbit to get units</br>
+	<%= f.submit :create %></br></br>
+	
+	<%# will the above link me out or just create the reading?  i want to print out units based on a calculation, render those, then let them post. %>
+	
+	post about how this reading is making you feel</br>
+	<%= f.text_area :post %></br>
+	<%= f.submit :review %>
+	
+	<%# review should pass to a page for review of stats, see edit.html.erb %>
+	
+<% end %>
+
+
+<%# insert unit output here %>
+

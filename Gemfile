@@ -38,3 +38,9 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem 'thumbs_up'
+gem 'faker'
+gem 'devise'
+
+group :development do
+  gem 'quiet_assets'
+end

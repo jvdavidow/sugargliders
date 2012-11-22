@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class PostTest < ActiveSupport::TestCase
+class FeedControllerTest < ActionController::TestCase
   # test "the truth" do
   #   assert true
   # end

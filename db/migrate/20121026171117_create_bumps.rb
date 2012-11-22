@@ -4,6 +4,7 @@ class CreateBumps < ActiveRecord::Migration
       t.integer :post_id
       t.integer :bumper_id
       t.integer :bumped_id
+      t.references :user
 
       t.timestamps
     end

@@ -11,14 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121030032934) do
+ActiveRecord::Schema.define(:version => 20121116000314) do
 
   create_table "bumps", :force => true do |t|
     t.integer  "post_id"
     t.integer  "bumper_id"
     t.integer  "bumped_id"
+    t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "feeds", :force => true do |t|
+    t.string   "post"
+    t.integer  "following_id"
+    t.integer  "user_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "follows", :force => true do |t|
@@ -31,17 +40,20 @@ ActiveRecord::Schema.define(:version => 20121030032934) do
   create_table "internal_posts", :force => true do |t|
     t.text     "body"
     t.integer  "group_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "posts", :force => true do |t|
-    t.text     "body"
-    t.integer  "reading_id"
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "memberships", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "team_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "memberships", ["team_id"], :name => "index_memberships_on_team_id"
+  add_index "memberships", ["user_id"], :name => "index_memberships_on_user_id"
 
   create_table "readings", :force => true do |t|
     t.integer  "stress_level"
@@ -49,8 +61,14 @@ ActiveRecord::Schema.define(:version => 20121030032934) do
     t.integer  "exercise_level"
     t.integer  "carbs_consumed"
     t.integer  "unit_output"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.string   "post"
+    t.integer  "user_id"
+    t.boolean  "stress_level_public"
+    t.boolean  "glucose_reading_public"
+    t.boolean  "exercise_level_public"
+    t.boolean  "carbs_consumed_public"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
   end
 
   create_table "teams", :force => true do |t|
@@ -64,12 +82,24 @@ ActiveRecord::Schema.define(:version => 20121030032934) do
   create_table "users", :force => true do |t|
     t.string   "name"
     t.integer  "age"
-    t.string   "email"
-    t.string   "username"
     t.string   "password"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.string   "username"
   end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
   create_table "votes", :force => true do |t|
     t.boolean  "vote",          :default => false, :null => false

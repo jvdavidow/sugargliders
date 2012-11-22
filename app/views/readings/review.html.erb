@@ -1,0 +1,22 @@
+do you want to attach any of your stats to your post?
+<%= form_for @reading do |f| %>
+<%= f.check_box :exercise_level_public %>
+<%= f.label(:exercise_level_public, "my workout load's been " + @reading.exercise_level.to_s) %></br>
+<%= f.check_box :carbs_consumed_public %>
+<%= f.label(:carbs_consumed_public, "i've consumed " + @reading.carbs_consumed.to_s) %></br>
+<%= f.check_box :stress_level_public %>
+<%= f.label(:stress_level_public, "i've been at " + @reading.stress_level.to_s + " on a scale of 1 to 5 today") %></br>
+<%= f.check_box :glucose_reading_public %>
+<%= f.label(:glucose_reading_public, "i have a BG of " + @reading.glucose_reading.to_s) %>
+<%= f.hidden_field :exercise_level %>
+<%= f.hidden_field :glucose_reading %>
+<%= f.hidden_field :stress_level %>
+<%= f.hidden_field :carbs_consumed %>
+<%= f.hidden_field :post %>
+</br></br>
+
+You're posting: <%= @reading.post %><br /><br />
+
+here's a preview, you like it?  hit post!
+<%= f.submit :reading %>
+<% end %>
