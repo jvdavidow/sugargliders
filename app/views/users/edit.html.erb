@@ -1,1 +1,42 @@
-<%= render 'edit', edit_user_registration_path %>
+<h1>this is you,</h1>
+<p>edit as you wish!</p>
+
+<% form_for @user do |f| %>
+
+<!-- find profile pic gem
+
+<div>
+	<i>profile photo: </i>
+	<%= @user.profile photo %><%= link_to 'edit', users_path %>
+</div>
+ 
+-->
+
+<div>
+	<i>name: </i>
+	<%= f.text_field :name %>
+</div>
+
+<div>
+	<i>userame: </i>
+	<%= f.text_field :username %>
+</div>
+
+<div>
+	<i>age: </i>
+	<%= f.text_field :age %>
+</div>
+
+<div>
+	<i>motto: </i>
+	<%= f.text_field :motto %>
+</div>
+
+<!-- the following is often updated and responses are saved -->
+
+<div>
+	<i>life with diabetes is..: </i>
+	<%= f.text_field :gauge %>
+</div>
+
+<%= f.submit "Update" %>

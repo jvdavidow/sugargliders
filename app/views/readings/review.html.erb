@@ -15,8 +15,8 @@ do you want to attach any of your stats to your post?
 <%= f.hidden_field :post %>
 </br></br>
 
+You're posting: <%= @reading.post %><br /><br />
 
 here's a preview, you like it?  hit post!
-<%= @reading.post %>
 <%= f.submit :reading %>
 <% end %>

@@ -1,13 +1,8 @@
 Sugargliders::Application.routes.draw do
 
-  get "users/show"
-
-  get "users/edit"
-
   devise_for :users
-
-  get "home/index"
   
+  resources :users
   resources :readings do
     collection do
       post 'review'

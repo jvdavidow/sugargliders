@@ -23,6 +23,7 @@
  nav,
  section {
    display: block;
+	 margin: 10px, 10px;
  }
 
  audio,

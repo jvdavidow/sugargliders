@@ -1,6 +1,6 @@
 <h1>jump in!</h1>
-<h3>hi, <%= @user.name.humanize %>, how's it hangin'?</h3><br />
-<h4>want to add more to your <%= link_to 'profile', edit_user_registration_path %>?</h4>
+<h3>hi, <strong><%= current_user.username %></strong>, how's it hangin'?</h3><br />
+<h4>want to add more to your <%= link_to 'profile', user_path %>?</h4>
 
 <h2>here's how other people are doin'</h2>
 
