@@ -337,3 +337,13 @@
    height: 40px;
    margin: 20px 0;
  }
+
+ .feed {
+	 border: 5px solid black;
+	 width: 300px;
+ }
+
+ #user_nav {
+	 border: 2px solid black;
+	 width: 260px;
+ }
