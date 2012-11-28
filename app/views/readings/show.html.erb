@@ -1,4 +1,18 @@
-<h1>Readings#show</h1>
-<p>Find me in app/views/readings/show.html.erb</p>
+<div class="public_post">
+<% if @reading.exercise_level_public %>
+my workout load's been <%= @reading.exercise_level.to_s %> for the day.<br />
+<% end %>
+<% if @reading.carbs_consumed_public %>
+i've consumed <%= @reading.carbs_consumed.to_s %> carbs today.<br />
+<% end %>
+<% if @reading.stress_level_public %>
+i've been at a <%= @reading.stress_level.to_s %> stress level today.<br />
+<% end %>
+<% if @reading.glucose_reading_public %>
+i have a BG of <%= @reading.glucose_reading.to_s %> currently. <br />
+<% end %>
 
+<br>and this makes me feel: </br>
 <%= @reading.post %>
+
+</div>

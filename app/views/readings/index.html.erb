@@ -6,13 +6,13 @@
 
 <h4>following along? <%= link_to 'show following', readings_path(q: "following") unless params[:q] %></h4>
 
-<div class="feed" id="public">
+<div class="feed">
 <% @readings.each do |reading| %>
 <%= link_to reading.post, reading %></br>
 <% end %>
 </div>
 
-<div class="box" id="input_reading">
+<div class="create_new">
 <h2>create your reading,</h2>
 <h3>and add some thoughts</h3>
 <%= link_to 'create new', new_reading_path %>
