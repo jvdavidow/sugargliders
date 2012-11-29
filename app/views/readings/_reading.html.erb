@@ -1,1 +1,25 @@
-<%= @readings.post %>
+<div class="public_post">
+	<blockquote>
+
+	<dl class="dl-horizontal">
+		<dt>stats</dt>
+		<dd><% if reading.exercise_level_public %>
+			<%= "workout load: " + reading.exercise_level.to_s %><br />
+		<% end %>
+		<% if reading.carbs_consumed_public %>
+			<%= "carbs: " + reading.carbs_consumed.to_s %><br />
+		<% end %>
+		<% if reading.stress_level_public %>
+			<%= "stress level: " + reading.stress_level.to_s %><br />
+		<% end %>
+		<% if reading.glucose_reading_public %>
+			<%= "glucose reading :" + reading.glucose_reading.to_s %><br />
+		<% end %></dd>
+	
+		<dt>post </dt>
+		<dd><strong><%= reading.post %></strong><br /></dd>
+	</dl>
+	
+	<small><cite><%= current_user.username %></cite></small>
+	</blockquote>
+</div>

@@ -1,5 +1,6 @@
 do you want to attach any of your stats to your post?
 
+<div class="container">
 <%= form_for @reading do |f| %>
 <%= f.check_box :exercise_level_public %>
 <%= f.label(:exercise_level_public, "my workout load's been " + @reading.exercise_level.to_s) + " for the day."%></br>
@@ -15,6 +16,7 @@ do you want to attach any of your stats to your post?
 <%= f.hidden_field :stress_level %>
 <%= f.hidden_field :carbs_consumed %>
 <%= f.hidden_field :post %>
+</div>
 </br></br>
 
 You're posting: <%= @reading.post %><br /><br />

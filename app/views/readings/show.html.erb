@@ -1,3 +1,5 @@
+<!-- the page will show the specific reading and visualizations over time about the users readings. -->
+
 <div class="public_post">
 <% if @reading.exercise_level_public %>
 my workout load's been <%= @reading.exercise_level.to_s %> for the day.<br />
@@ -16,3 +18,4 @@ i have a BG of <%= @reading.glucose_reading.to_s %> currently. <br />
 <%= @reading.post %>
 
 </div>
+
