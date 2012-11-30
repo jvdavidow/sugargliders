@@ -10,29 +10,36 @@
  
 -->
 
+<div class="container">
 <div>
 	<i>name: </i>
-	<%= @user.name %><%= link_to 'edit', edit_user_registration_path %>
-</div>
+	<%= @user.name %><br />
+	<%= link_to 'edit', edit_user_registration_path %>
+</div><br />
 
 <div>
 	<i>userame: </i>
-	<%= @user.username %><%= link_to 'edit', edit_user_registration_path %>
-</div>
+	<%= @user.username %><br />
+	<%= link_to 'edit', edit_user_registration_path %>
+</div><br />
 
 <div>
 	<i>age: </i>
-	<%= @user.age %><%= link_to 'edit', edit_user_registration_path %>
-</div>
+	<%= @user.age %><br />
+	<%= link_to 'edit', edit_user_registration_path %>
+</div><br />
 
 <div>
 	<i>motto: </i>
-	<%# @user.motto %><%= link_to 'edit', edit_user_registration_path %>
-</div>
+	<%# @user.motto %><br />
+	<%= link_to 'edit', edit_user_registration_path %>
+</div><br />
 
 <!-- the following is often updated and responses are saved to be visualized over time -->
 
 <div>
 	<i>life with diabetes is..: </i>
-	<%# @user.gauge %><%= link_to 'edit', edit_user_registration_path %>
+	<%# @user.gauge %><br />
+	<%= link_to 'edit', edit_user_registration_path %>
+</div><br />
 </div>

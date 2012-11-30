@@ -1,9 +1,12 @@
-<div class="container">
+<div class="row">
+	<div class="span12">
 	<h1>jump in!</h1>
 	<h3>hi, <strong><%= current_user.username %></strong>, how's it hangin'?</h3><br />
 </div>
+</div>
 
-<div class="container span6">
+<div class="row">
+<div class="span9">
 	<h2>here's how others are doin'</h2>
 
 	<h4>following along? <%= link_to 'show following', readings_path(q: "following") unless params[:q] %></h4>
@@ -17,12 +20,14 @@
 	<h2>ready to post?</h2>
 	<div class="btn btn-small btn-success"><%= link_to 'create new', new_reading_path %>
 	</div>
+
 	
 	<h2>your visuals:</h2>
-	<img src="mockvisual.png" class="img-rounded" width="150" ></img>
+	<%= image_tag 'mockvisual.png', class: 'img-rounded', width: '150px' %>
 	<br />
 	<h2>your recent tags:</h2>
-	<img src="mocktagcloud.jpg" class="img-rounded" width="150"></img>
+	<%= image_tag 'mocktagcloud.jpg', class: "img-rounded", width: "150px" %>
+</div>
 </div>
 
 
