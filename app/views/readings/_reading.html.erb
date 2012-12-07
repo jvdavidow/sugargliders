@@ -21,7 +21,7 @@
 	</dl>
 	
 	<small><cite>
-		<%= image_tag reading.user.image_url(:thumb).to_s %>
+		<%= image_tag reading.user.image_url(:thumb) if reading.user.image_url %>
 		<strong><%= reading.user.username.upcase %></strong>
 		<%= render :partial => 'follows/follow', :locals => { :user => reading.user, :current_user => current_user} %>
 		<br />

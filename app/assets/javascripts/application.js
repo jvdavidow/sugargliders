@@ -17,8 +17,7 @@
 
 
 $(document).ready(function(){
-	$(".js-submit").on("click",function(){
-		console.log("anything");
+	$("body").on("click",".js-submit",function(){
 		$(this).parent("form").submit();
 		return false;
 	});

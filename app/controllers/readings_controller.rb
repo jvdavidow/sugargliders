@@ -3,7 +3,8 @@ class ReadingsController < ApplicationController
   
   def index
     if params[:q]
-      @readings = [Reading.first]
+      # @readings = current_user.following.map {|f| f.readings }.flatten
+      @readings = current_user.following_readings
     else
       @readings = Reading.all
     end
