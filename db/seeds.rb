@@ -16,4 +16,8 @@
   end
 end
 
+u = User.first
+u.update_attributes(password: "helloworld", password_confirmation: "helloworld", username: "user")
+
 puts "#{User.count} Users Created"
+puts "Default user:\n - username: user\n - password: helloworld"
