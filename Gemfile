@@ -43,6 +43,8 @@ gem 'jquery-rails'
 gem 'thumbs_up'
 gem 'faker'
 gem 'devise'
+gem 'rmagick'
+gem 'carrierwave'
 
 group :development do
   gem 'quiet_assets'

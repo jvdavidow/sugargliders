@@ -1,45 +1,78 @@
-<h1>this is you,</h1>
-<p>edit as you wish!</p>
+<h1>this is<% if current_user == @user %> you, <% end %> <%= @user.username %></h1>
 
-<!-- find profile pic gem
+<% if current_user == @user %>
+	<p>edit as you wish!</p>
+<% elsif current_user.following.include?(@user) %>
+    <%= link_to "Unfollow", follow_path(current_user.following_for(@user)), :method => :delete %>
+<% else %>
+    <%= form_for @following_id do |f| %>
+      <%= f.hidden_field :following_id, :value => @user.id %>
+      <%= f.submit "Follow" %>
+		<% end %>
+<% end %>
 
-<div>
-	<i>profile photo: </i>
-	<%# @user.profile photo %><%= link_to 'edit', edit_user_registration_path %>
-</div>
- 
--->
-
-<div class="container">
-<div>
-	<i>name: </i>
-	<%= @user.name %><br />
-	<%= link_to 'edit', edit_user_registration_path %>
-</div><br />
-
-<div>
-	<i>userame: </i>
-	<%= @user.username %><br />
-	<%= link_to 'edit', edit_user_registration_path %>
-</div><br />
-
-<div>
-	<i>age: </i>
-	<%= @user.age %><br />
-	<%= link_to 'edit', edit_user_registration_path %>
-</div><br />
-
-<div>
-	<i>motto: </i>
-	<%# @user.motto %><br />
-	<%= link_to 'edit', edit_user_registration_path %>
-</div><br />
-
-<!-- the following is often updated and responses are saved to be visualized over time -->
-
-<div>
-	<i>life with diabetes is..: </i>
-	<%# @user.gauge %><br />
-	<%= link_to 'edit', edit_user_registration_path %>
-</div><br />
+<div class="container"> 
+	<div class="row">
+		<div class="span9">
+			<div>
+				<%= image_tag @user.image_url(:profile).to_s %>	
+			</div>
+			
+			<div>
+			<i>name: </i>
+			<%= @user.name %><br />
+			</div><br />
+			
+			<div>
+			<i>userame: </i>
+			<%= @user.username %><br />
+			</div><br />
+			
+			<div>
+			<i>age: </i>
+			<%= @user.age %><br />
+			</div><br />
+			
+			<div>
+			<i>motto: </i>
+			<%# @user.motto %><br />
+			</div><br />
+			
+			<!-- the following is often updated and responses are saved to be visualized over time -->
+			
+			<div>
+			<i>life with diabetes is..: </i>
+			<%# @user.gauge %><br />
+			</div><br />
+		
+			<div>
+				<% if current_user == @user %>
+				<h3><%= link_to 'edit', edit_user_registration_path %></h3>
+				<% end %>
+			</div>
+		</div>
+			
+		<div class="span3">
+			<div>
+			<i>following: </i>
+			<% @user.following.each do |follow| %>
+			<div>
+				<%= image_tag follow.image_url(:thumb).to_s %>
+				<%= follow.username %>
+				<%# follow.motto %>
+			</div>
+			<% end %>
+			</div>
+			
+			<div>
+			<i>followers: </i>
+			<% @user.followers.each do |follower| %>
+			<div>
+				<%= image_tag follower.image_url(:thumb).to_s %>
+				<%= follower.username %>
+				<%# follower.motto %>
+			</div>
+			<% end %>
+		</div>
+	</div>
 </div>

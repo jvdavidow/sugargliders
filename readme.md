@@ -37,3 +37,19 @@ Team
 	user_id
 	group_id
 	tags
+	
+	
+	ToDO:
+	gagues - verbal and number score, develop log and show graph over time.
+		develop gauge model for has_many relationship
+	show page logic for profile/follow links on span3
+	destroy method in follows_controller
+	
+	
+	rails g migration AddMottoToUsers
+	
+	
+	
+	
+	
+	

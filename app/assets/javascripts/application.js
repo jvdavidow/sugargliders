@@ -14,3 +14,14 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+
+
+$(document).ready(function(){
+	$(".js-submit").on("click",function(){
+		console.log("anything");
+		$(this).parent("form").submit();
+		return false;
+	});
+});
+
+

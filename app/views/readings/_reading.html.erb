@@ -20,6 +20,11 @@
 		<dd><h5><strong><%= reading.post %></strong></h5><br /></dd>
 	</dl>
 	
-	<small><cite><%= current_user.username %>, posted <%= reading.meal_time %></cite></small>
+	<small><cite>
+		<%= image_tag reading.user.image_url(:thumb).to_s %>
+		<strong><%= reading.user.username.upcase %></strong>
+		<%= render :partial => 'follows/follow', :locals => { :user => reading.user, :current_user => current_user} %>
+		<br />
+		posted <%= reading.meal_time %></cite></small>
 	</blockquote>
 </div>

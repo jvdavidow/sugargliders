@@ -1,0 +1,2 @@
+console.log(".js-follow-<%= @user.id %>");
+$(".js-follow-<%= @user.id %>").replaceWith("<%= escape_javascript(render(:partial => 'follows/follow', :locals => { :user => @user, :current_user => current_user})) %>");

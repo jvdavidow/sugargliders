@@ -2,29 +2,32 @@
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>
+	
+	<div><%= f.file_field :image %><br />	
+	</div><br />
 
-  <div><%= f.label :name %><br />
+  <div><%= f.label :name %>
 	<%= f.text_field :name %></div>
 
-  <div><%= f.label :age %><br />
+  <div><%= f.label :age %>
 	<%= f.number_field :age %></div>
 
-  <div><%= f.label :email %><br />
+  <div><%= f.label :email %>
   <%= f.email_field :email %></div>
 	
-  <div><%= f.label :username %><br />
+  <div><%= f.label :username %>
 	<%= f.text_field :username %></div>
 
   <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
   <%= f.password_field :password, :autocomplete => "off" %></div>
 
-  <div><%= f.label :password_confirmation %><br />
+  <div><%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %></div>
 
   <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
   <%= f.password_field :current_password %></div>
 
-	<div><%# f.check_box :make_private %> <i>(we recommend you make all your information private, aside from your username)</i></div>
+	<div><%# f.check_box :make_private %> <i>(we recommend you keep all your information private, aside from your username)</i></div>
   <div><%= f.submit "Update" %></div>
 <% end %>
 

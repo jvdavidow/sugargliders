@@ -1,0 +1,10 @@
+<span class="js-follow-<%= user.id %>">
+<% if current_user.following.include?(user) %>
+<%= link_to "unfollow", follow_path(current_user.following_for(user)), :method => :delete, :remote => true %>	
+<% elsif current_user != user %>
+	<%= form_for Follow.new, remote: true do |f| %>
+		<%= f.hidden_field :following_id, value: user.id %>
+		<%= link_to "follow", "#", class: "js-submit" %>
+	<% end %>
+<% end %>
+</span>

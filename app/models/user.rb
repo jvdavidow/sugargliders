@@ -7,8 +7,7 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
-  attr_accessible :age, :email, :name, :password, :username
-  # , :profile_pic
+  attr_accessible :age, :email, :name, :password, :username, :image
   
   validates_presence_of :username
   
@@ -24,7 +23,7 @@ class User < ActiveRecord::Base
   has_many :following, :through => :follows
 
   # need to get follows, but the other way
-  has_many :followed_by, :class_name => 'Follow', :foreign_key => :follower_id
+  has_many :followed_by, :class_name => 'Follow', :foreign_key => :following_id
   # then get the followers through that relationship
   has_many :followers, :through => :followed_by
   
@@ -32,5 +31,11 @@ class User < ActiveRecord::Base
 
   # acts_as_voter
   # has_karma(:questions, :as => :submitter, :weight => 0.5)
+  mount_uploader :image, ImageUploader
+
+  def following_for(other_user)
+    # self.follows.where(following_id:other_user.id).first
+    self.follows.find_by_following_id(other_user.id)
+  end
 
 end
