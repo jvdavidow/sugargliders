@@ -22,6 +22,8 @@ class User < ActiveRecord::Base
   # then we build the relationship through that
   has_many :following, :through => :follows
 
+  has_many :following_readings, :through => :following, :source => :readings
+
   # need to get follows, but the other way
   has_many :followed_by, :class_name => 'Follow', :foreign_key => :following_id
   # then get the followers through that relationship
